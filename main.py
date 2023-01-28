@@ -1,43 +1,33 @@
 import math
+#длина площадь
 
-def ploRect(a, b):
-    return (a * b)      #площадь четырехугольника
+def lTr(x, InT):
+    if InT == 'm': return x
+    if InT == 'cm': return x/(100)
+    if InT == 'mm': return x/(1000)
+    if InT == 'km': return x*1000
 
-def perRect(a,b):
-    return 2 * (a + b) # периметр прямоугольника
+def lenTrans(x, InT, ExT):
+    if ExT == InT: return x
+    a = lTr(x, InT)
+    if ExT == 'mm': return a*(1000)
+    if ExT == 'cm': return a*(100)
+    if ExT == 'm': return a
+    if ExT == 'km': return a/(1000)
 
-def ploTriangl(a, b, c):    # S треугольника по 3 сторонам
-    p = (a + b + c) / 2
-    plo = (p * (p-a) * (p-b) * (p-c)) ** 0.5
-    return plo
 
-def perTriangle(a, b, c):
-    return a + b + c       #периметр треугольника
 
-def ploTriangl2(a, h):      # S треугольника по высоте и стороне
-    return a*h * 0.5
+def plTr(x, InT):
+    if InT == 'm^2': return x
+    if InT == 'cm^2': return x / (100**2)
+    if InT == 'mm^2': return x / (1000**2)
+    if InT == 'km^2': return x * (1000**2)
 
-def ploParall(a,h):
-    return a * h    #площадь параллелограмма через сторону и высоту
-
-def ploRomb(a,b):
-    return a*b*0.5      #площадь ромба
-
-def ploCircle(r):
-    return round(math.pi * (r**2), 2)     #площадь круга
-
-def perCircle(r):
-    return round(2 * r * math.pi, 2)      #периметр круга
-
-def ploTrap(a, b, h):
-    return ((a + b) / 2) * h    #площадь трапеции
-
-def ploCilinder(r,h):
-    return round(math.pi * (r**2) * h, 2)     #объем циилиндра
-
-def ploPara(a,b,c):
-    return a*b*c    #Площадь параллелепипеда
-
-def ploSphere(r):
-    return round((4/3) * (r**3) * math.pi, 2)   #площадь Сферы
+def plTrans(x, InT, ExT):
+    if ExT == InT: return x
+    a = plTr(x, InT)
+    if ExT == 'mm^2': return a*(1000**2)
+    if ExT == 'cm^2': return a*(100**2)
+    if ExT == 'm^2': return a
+    if ExT == 'km^2': return a/(1000**2)
 
